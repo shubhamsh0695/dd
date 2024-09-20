@@ -1,0 +1,30 @@
+meta {
+  name: Login local
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{BASE_URI}}/login-local
+  body: json
+  auth: none
+}
+
+params:query {
+  : 
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "email": "jejoe33@gmail.com",
+    "password": "admin"
+  }
+}
+
+vars:post-response {
+  TOKEN: res.body.user.token
+}
